@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}My Gallery{% endblock %}</title>
+
+
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <!-----BOOTSTRAP CSS------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+<div id="header">
+    <a href="/" class="logo" style="text-decoration: none;">My Gallery</a>
+</div>
+<div id="subheader" style="background: grey; background-size: cover; padding-top: 10px;">
+    <div class="cart pl-5 " align="Center">
+        <h1>Welcome To My Gallery</h1>
+            <div class="addpost" align="right">
+            <a class="cart pl-5"    href="{% url 'addpost'%}">Add Post</a>
+            </div>
+    </div>
+
+</div>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

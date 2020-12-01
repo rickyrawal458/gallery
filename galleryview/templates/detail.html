@@ -1,0 +1,26 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    {{ list.name }}
+{% endblock %}
+{% block content %}
+<style>
+    body{
+        overflow-x: hidden;
+
+    }
+</style>
+<div class="list-detail pt-5 ml-5">
+    <div class="row">
+        <div class="col-lg-5">
+            <img width="100%" src="{% if list.image %}{{ list.image.url }}{% else %}    {% static "img/no_image.png" %}{% endif %}" >
+        </div>
+        <div class="col-lg-7">
+            <h1>{{ list.name }}</h1>
+            <h2><a href="{{ list.tag.get_absolute_url }}">{{list.tag }}</a></h2>
+            <p class="price">${{list.tag }}</p>
+                {{ line.description|linebreaks }}
+        </div>
+    </div>
+</div>
+{% endblock %}
